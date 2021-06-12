@@ -2,7 +2,7 @@
 layout: default
 title: "Mistune Bug"
 image: /assets/thumbnail.png
-description: "Mistune is a remote exploit successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively"
+description: "Mistune is a remote exploit demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively"
 ---
 
 # What's Mistune?
@@ -89,12 +89,12 @@ Hardened Just-in-Time compiler leverages special system registers to implement `
 
 As the exploit was not really targetting WebKit itself, protections like Gigacage, PACCage, StructureID Randomization are not the main concerns.
 
-Instead, it totally relies on Objective-C runtime to build all the primitives. Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
+Instead, it totally relied on Objective-C runtime to build all the primitives. Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
 
-Glad to see some new improvement by 14.5 effectively stops many of them after the report.
+Glad to see some new improvements by 14.5 effectively stops many of them after the report.
 
 ## Acknowledgement
 
-I would like to thank the organizer of TianfuCup for hosting the event and helping with the disclosure. Also thank Apple product security team for reviewing the issues and shipping the patches within reasonable time.
+I would like to thank the organizer of TianfuCup for hosting the event and helping with the disclosure. Also thank Apple product security team for reviewing the issues, shipping the patches within reasonable time and the recognition.
 
 The dynamic logo was created with [PhotoMesh](https://photomosh.com/). Impressive tool!
