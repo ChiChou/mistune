@@ -12,9 +12,9 @@
 
     <article class="first">
       <div class="content">
-        <video autoplay muted loop width="240" height="240" playsinline>
+        <video autoplay muted loop width="120" height="120" playsinline webkit-playsinline x5-video-player-type="h5">
           <source src="/mistune/assets/glitch.mp4" type="video/mp4">
-          <!-- <source src="/mistune/assets/glitch.webm" type="video/webm"> -->
+          <img src="/mistune/assets/fallback.png" width="120" height="120">
         </video>
 
         <h1>Mistune</h1>
@@ -27,5 +27,11 @@
     </article>
 
     <!-- {{ content }} -->
+
+    <script type="application/javascript">
+      // shitty WeChat
+      document.addEventListener('WeixinJSBridgeReady', () =>
+        document.querySelector('video').play(), false);
+    </script>
   </body>
 </html>
