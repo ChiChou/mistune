@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    {% include header.html %}
+
+    <article class="first">
+      <div class="content">
+        <video autoplay muted loop width="240" height="240">
+          <source src="/mistune/assets/glitch.mp4" type="video/mp4">
+          <source src="/mistune/assets/glitch.webm" type="video/webm">
+        </video>
+
+        <h1>Mistune</h1>
+        <h2>Remote code execution vulnerabilities <br>that have been hiding for a decade</h2>
+        <nav>
+          <a href="https://support.apple.com/en-us/HT212146" target="_blank" rel="noopener">CVE-2021-1748</a>
+          <a href="https://support.apple.com/en-us/HT212317" target="_blank" rel="noopener">CVE-2021-1864</a>
+        </nav>
+      </div>
+    </article>
+
+    <!-- {{ content }} -->
+  </body>
+</html>
