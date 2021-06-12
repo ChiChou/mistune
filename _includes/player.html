@@ -14,12 +14,23 @@
 
   // Replace the 'ytplayer' element with an <iframe> and
   // YouTube player after the API code downloads.
-  var player;
+  function size() {
+    const width = document.getElementById('ytplayer').parentElement.clientWidth;
+    const height = width * 9 / 16;
+    return { width, height };
+  }
+
   function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      height: '360',
-      width: '640',
+    const { width, height } = size();
+    const player = new YT.Player('ytplayer', {
+      height,
+      width,
       videoId: '{{ site.video }}'
     });
+
+    window.addEventListener('resize', () => {
+      const { width, height } = size();
+      player.setSize(width, height);
+    })
   }
 </script>
