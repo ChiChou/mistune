@@ -1,7 +1,8 @@
 ---
 layout: default
-title: "Home"
-image: /mistune/assets/thumbnail.png
+title: "Mistune Bug"
+image: /assets/thumbnail.png
+description: "Mistune is a full chain exploit targeting iOS 14 on iPhone 11, successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively."
 ---
 
 # What's Mistune?
