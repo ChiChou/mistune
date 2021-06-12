@@ -89,7 +89,7 @@ Hardened Just-in-Time compiler leverages special system registers to implement `
 
 As the exploit was not really targetting WebKit itself, protections like Gigacage, PACCage, StructureID Randomization are not the main concerns.
 
-Instead, it totally relied on Objective-C runtime to build all the primitives. Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
+Instead, it totally relied on Objective-C runtime to build all the primitives. Objective-C had introduced several little-known protections before it, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
 
 Glad to see some new improvements by 14.5 effectively stops many of them after the report.
 
