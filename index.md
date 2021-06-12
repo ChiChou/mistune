@@ -43,13 +43,13 @@ After direct disclosure to the vendor, [CVE-2021-1748](https://support.apple.com
 >
 > CVE-2021-1864: CodeColorist of Ant-Financial LightYear Labs
 
-Those bugs were probably never been exploited in-the-wild because they left significant traces by switching to a local app, which is not ideal for real attackers. But you should always keep your phone updated.
+Those bugs were probably never been exploited in-the-wild because they left significant traces by switching to a local app, which is not ideal for real attackers. But you should always keep your phone updated to avoid n-day attacks.
 
 ## What's the attack vector?
 
-The entrance is a special universal link. When Safari opens the link, it redirects to iTunes Store app without user's confirmation. The link can also be open via iMessage and AirDrop.
+The entrance is a special universal link. When Safari opens the link, it redirects to iTunes Store app without user's confirmation. The link can also be opened via iMessage and AirDrop.
 
-I've verified several popular third party instant messagers to successfully trigger the bug, including Telegram, WhatsApp, Signal and Google Handouts.
+I've verified several popular 3rd-party instant messengers to successfully trigger the bug, including Telegram, WhatsApp, Signal and Google Handouts.
 
 ## Everyone is born unique. What makes it special?
 
