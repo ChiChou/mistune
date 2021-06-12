@@ -61,14 +61,20 @@ This is the most remarkable protection for the challenge. With hardware-assisted
 
 MobileSafari has Javascript running in a very limited containerized process. The exploit uses a client-site XSS to easily switch to a loosy context where Just-in-time is still avaliable.
 
-### Hardened JIT
-
-Hardened Just-in-Time compiler leverages special system registers to implement `W^X` policy to JITed code, to protect it from being altered by arbitrary memory read and write. The exploit had arbitrary shellcode successfully executed.
-
 ### Transparency Consent and Control (TCC)
 
 Contacts, MediaLibrary and Camera are protected by TCC framework. Third party apps and web sites need user's approvement before accessing them. This exploit got shellcode executed in a very special context where those accesses are explicitly granted.
 
+### Hardened JIT
+
+Hardened Just-in-Time compiler leverages special system registers to implement `W^X` policy to JITed code, to protect it from being altered by arbitrary memory read and write. The exploit had arbitrary shellcode successfully executed.
+
+### Other WebKit mitigations
+
+As the exploit was not really targetting WebKit itself, protections like Gigacage, PACCage, StructureID Randomization are not the main concerns.
+
 ### Objective-C Runtime
 
-Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition. I'm so glad to see some new improvement by 14.5 effectively stops many of them after this report.
+Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit involves Objective-C runtime features and has bypassed some of them at the time of the competition.
+
+I'm so glad to see some new improvement by 14.5 effectively stops many of them after the report.
