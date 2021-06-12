@@ -31,15 +31,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
+  background: #151515;
   color: #999;
 
   h1 {
     font-size: 3rem;
+    font-family: 'Special Elite', cursive;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 200;
+    font-family: 'Special Elite', cursive;
   }
 
   h1, h2 {
-    font-weight: 200;
     margin: 1rem;
   }
 
@@ -50,17 +56,18 @@ header {
   video {
     margin-bottom: 5rem;
     pointer-events: none;
+    box-shadow: 0 0 80px 20px #000;
   }
 
   a {
-    color: #fff;
+    color: #888;
     display: inline-block;
     margin: 2rem;
 
     transition: .2s color ease-in-out;
 
     &:hover {
-      color: #0af;
+      color: #fff;
     }
   }
 }

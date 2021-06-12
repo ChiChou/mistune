@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <title>{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   </head>
   <body>
     {% include header.html %}
@@ -17,7 +19,7 @@
           <img src="/mistune/assets/fallback.png" width="120" height="120">
         </video>
 
-        <h1>Mistune</h1>
+        <h1 class="glitch" data-text="Mistune">Mistune</h1>
         <h2>Remote code execution vulnerabilities <br>that have been hiding for a decade</h2>
         <nav>
           <a href="https://support.apple.com/en-us/HT212146" target="_blank" rel="noopener">CVE-2021-1748</a>
