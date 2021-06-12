@@ -3,3 +3,6 @@ baseurl: "/mistune"
 title: "Mistune Bug"
 
 video: Hj053p7_DC0
+
+plugins:
+  - jekyll-seo-tag

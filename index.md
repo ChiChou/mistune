@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Home"
+image: /mistune/assets/thumbnail.png
 ---
 
 # What's Mistune?
