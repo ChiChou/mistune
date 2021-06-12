@@ -2,14 +2,14 @@
 layout: default
 title: "Mistune Bug"
 image: /assets/thumbnail.png
-description: "Mistune is a remote exploit targeting iOS 14.2 on iPhone 11, successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively"
+description: "Mistune is a remote exploit successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively"
 ---
 
 # What's Mistune?
 
-Mistune is a remote exploit targeting iOS 14.2 on iPhone 11, successfully demostrated by [@codecolorist](https://twitter.com/codecolorist) at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively.
+Mistune is a remote exploit targeting iOS 14.2 on iPhone 11, successfully demostrated by [@codecolorist](https://twitter.com/codecolorist) at [TianfuCup 2020](http://www.tianfucup.com/tfc2020/). It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively. They were born with Generation Z!
 
-Full chain remote code execution means that by clicking on a malicious link (wherever it comes, such as mail, direct messages and AirDrop), the attacker may be able to access your Contacts, Camera, Payments and load further kernel exploit payload to gain full control of the phone.
+Full chain remote code execution means that by opening a malicious link (wherever it comes, such as mail, direct messages and AirDrop), the attacker may be able to access your Contacts, Camera, Payments and load further kernel exploit payload to gain full control of the phone.
 
 Although the exploit is delievered via traditional web browser 1-click vector, the bugs are unique compared to known WebKit exploits.
 
@@ -21,7 +21,7 @@ Nope. I'm a noob and I know nothing about kernel exploitation. It's just userspa
 
 **Yes**.
 
-After direct disclosure to the vendor, [CVE-2021-1748](https://support.apple.com/en-us/HT212146) was patched by iOS 14.4 and [CVE-2021-1864](https://support.apple.com/en-us/HT212317) was gone after iOS 14.5. Those bugs were probably never been exploited in-the-wild, but you should always keep your phone updated to avoid potential attacks.
+After direct disclosure to the vendor, [CVE-2021-1748](https://support.apple.com/en-us/HT212146) was patched by iOS 14.4 and [CVE-2021-1864](https://support.apple.com/en-us/HT212317) was gone after iOS 14.5. 
 
 > iTunes Store
 >
@@ -43,6 +43,14 @@ After direct disclosure to the vendor, [CVE-2021-1748](https://support.apple.com
 >
 > CVE-2021-1864: CodeColorist of Ant-Financial LightYear Labs
 
+Those bugs were probably never been exploited in-the-wild because they left significant traces by switching to a local app, which is not ideal for real attackers. But you should always keep your phone updated.
+
+## What's the attack vector?
+
+The entrance is a special universal link. When Safari opens the link, it redirects to iTunes Store app without user's confirmation. The link can also be open via iMessage and AirDrop.
+
+I've verified several popular third party instant messagers to successfully trigger the bug, including Telegram, WhatsApp, Signal and Google Handouts.
+
 ## Everyone is born unique. What makes it special?
 
 Usually an exploit starts from WebKit, loads shellcode and try to exploit other bugs to escalate the privilege. Both of the bugs of Mistune were triggered and exploited in Javascript, but they were targeting a preinstalled app, iTunes Store, instead of MobileSafari.
@@ -53,15 +61,21 @@ A second memory safety issue (CVE-2021-1864) was used to gain full shellcode exe
 
 iOS remained standing at various pwn competitions after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 was the very first successful event that has this category pwned.
 
+## Is it related to hardware?
+
+No, but the hardware matters when it comes to exploitation. Some hardware level mitigations raised the bar greatly.
+
 ## What exact mitigations have been bypassed?
+
+The exploit was really tough for me. It's a state-of-the-art phone that have various protections. I was just being lucky that some mitigation was already in progress but not shipped at the time, which can totally broke the exploit.
 
 ### Pointer Authentication Code (PAC)
 
-This is the most remarkable protection for the challenge. With hardware-assisted control-flow integrity, it was hard for most known browser exploit primitives to work.
+This is the most remarkable protection for the challenge. With hardware-assisted control-flow integrity, it was not easy for most known browser exploit primitives to work.
 
 ### Sandbox
 
-MobileSafari has Javascript running in a very limited containerized process. The exploit uses a client-site XSS to easily switch to a loosy context where Just-in-time is still avaliable.
+MobileSafari has Javascript running in a very restrictive, containerized process. The exploit uses a client-site XSS to easily switch to a loosy context with extra attack surfaces, while Just-in-Time still remains avaliable.
 
 ### Transparency Consent and Control (TCC)
 
@@ -69,14 +83,18 @@ Contacts, MediaLibrary and Camera are protected by TCC framework. Third party ap
 
 ### Hardened JIT
 
-Hardened Just-in-Time compiler leverages special system registers to implement `W^X` policy to JITed code, to protect it from being altered by arbitrary memory read and write. The exploit had arbitrary shellcode successfully executed.
+Hardened Just-in-Time compiler leverages special system registers to implement `W^X` policy to JIT-ed code, to protect it from being altered by arbitrary memory read and write. The exploit had arbitrary shellcode successfully executed. Besides, this could have been the highest privilege that the shellcode could get after `jsc` executable had been dropped from iOS.
 
-### Other WebKit mitigations
+### Others
 
 As the exploit was not really targetting WebKit itself, protections like Gigacage, PACCage, StructureID Randomization are not the main concerns.
 
-### Objective-C Runtime
+Instead, it totally relies on Objective-C runtime to build all the primitives. Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
 
-Objective-C has introduced several little-known protections, including runtime obfuscation and randomization. The exploit involves Objective-C runtime features and has bypassed some of them at the time of the competition.
+Glad to see some new improvement by 14.5 effectively stops many of them after the report.
 
-I'm so glad to see some new improvement by 14.5 effectively stops many of them after the report.
+## Acknowledgement
+
+I would like to thank the organizer of TianfuCup for hosting the event and helping with the disclosure. Also thank Apple product security team for reviewing the issues and shipping the patches within reasonable time.
+
+The dynamic logo was created with [PhotoMesh](https://photomosh.com/). Impressive tool!

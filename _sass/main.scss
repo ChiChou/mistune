@@ -22,13 +22,6 @@ html {
   scroll-behavior: smooth;
 }
 
-header {
-  display: none;
-  nav a {
-    color: #fff;
-  }
-}
-
 .container {
   @media (max-width: 40rem) {
     width: auto;
