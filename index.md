@@ -1,14 +1,13 @@
 ---
 layout: default
 title: "Mistune Bug"
-url: https://blog.chichou.me/mistune/
-image: https://blog.chichou.me/mistune/assets/thumbnail.png
-description: "Mistune is a full chain exploit targeting iOS 14 on iPhone 11, successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively."
+image: /assets/thumbnail.png
+description: "Mistune is a remote exploit targeting iOS 14.2 on iPhone 11, successfully demostrated at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively"
 ---
 
 # What's Mistune?
 
-Mistune is a full chain exploit targeting iOS 14 on iPhone 11, successfully demostrated by [@codecolorist](https://twitter.com/codecolorist) at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively.
+Mistune is a remote exploit targeting iOS 14.2 on iPhone 11, successfully demostrated by [@codecolorist](https://twitter.com/codecolorist) at TianfuCup 2020. It consists of two bugs that were introduced by iOS 3 and iOS 6 respectively.
 
 Full chain remote code execution means that by clicking on a malicious link (wherever it comes, such as mail, direct messages and AirDrop), the attacker may be able to access your Contacts, Camera, Payments and load further kernel exploit payload to gain full control of the phone.
 
