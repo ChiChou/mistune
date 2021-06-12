@@ -21,7 +21,10 @@
 
         <h1 class="glitch" data-text="Mistune">Mistune</h1>
         <h2>Remote code execution vulnerabilities <br>that have been hiding for a decade</h2>
-        <nav><a id="down" href="#main"><span class="material-icons">expand_more</span></a></nav>
+        <nav>
+          <a href="#main"><span class="material-icons">book</span>About</a>
+          <a href="#video"><span class="material-icons">theaters</span>Video</a>
+        </nav>
       </div>
     </article>
 
@@ -40,7 +43,7 @@
     </article>
 
     <section class="commercial">
-      <div class="container">
+      <div class="container" id="video">
         {% include player.html %}
       </div>
     </section>
@@ -48,7 +51,8 @@
     <article>
       <div class="container content">
         <h3>Disclosure eta wen</h3>
-        <p></p>
+        <p>All the bugs have been patched, including some of the exploitation techniques.
+          Hopefully the talk will be released soon</p>
       </div>
     </article>
     
@@ -61,10 +65,15 @@
     </script>
     <script type="application/javascript">
       if (!('scrollBehavior' in document.querySelector('html').style)) {
-        document.getElementById('down').addEventListener('click', e => {
-          e.preventDefault();
-          document.getElementById('main').scrollIntoView({
-            behavior: "smooth", block: "end", inline: "nearest"
+        document.querySelectorAll('.first nav > a').forEach(link => {
+          link.addEventListener('click', e => {
+            if (e.srcElement.nodeName.toLowerCase() !== 'a') return
+
+            e.preventDefault();
+            console.log(e.target, e.srcElement)
+            document.getElementById(e.srcElement.href.substring(1)).scrollIntoView({
+              behavior: "smooth", block: "end", inline: "nearest"
+            });
           });
         })
       }

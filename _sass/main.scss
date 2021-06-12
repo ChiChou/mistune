@@ -108,6 +108,16 @@ article, main {
   background: #151515;
   color: #999;
 
+  nav > a {
+    font-size: 1rem;
+    text-decoration: none;
+    > span {
+      font-size: 1.25rem;
+      margin-right: .125rem;
+      vertical-align: middle;
+    }
+  }
+
   h1 {
     font-size: 3rem;
     font-family: "Special Elite", cursive;
@@ -154,4 +164,20 @@ article, main {
   padding: 1rem 0;
   background: #243035;
   color: #efefef;
+}
+
+footer {
+  background: #e7e7e7;
+  padding: 1rem 2rem;
+  font-size: .75rem;
+
+  .two-side {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #222;
+      margin-left: 2em;
+    }
+  }
 }
