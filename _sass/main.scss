@@ -7,7 +7,9 @@ body {
   color: $bodyColor;
   font-family: $bodyFont;
   margin: 0;
-  font-size: 16px;
+
+html {
+  scroll-behavior: smooth;
 }
 
 header {

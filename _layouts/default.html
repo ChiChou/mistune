@@ -21,10 +21,7 @@
 
         <h1 class="glitch" data-text="Mistune">Mistune</h1>
         <h2>Remote code execution vulnerabilities <br>that have been hiding for a decade</h2>
-        <nav>
-          <a href="https://support.apple.com/en-us/HT212146" target="_blank" rel="noopener">CVE-2021-1748</a>
-          <a href="https://support.apple.com/en-us/HT212317" target="_blank" rel="noopener">CVE-2021-1864</a>
-        </nav>
+        <nav><a id="down" href="#main"><span class="material-icons">expand_more</span></a></nav>
       </div>
     </article>
 
@@ -34,6 +31,16 @@
       // shitty WeChat
       document.addEventListener('WeixinJSBridgeReady', () =>
         document.querySelector('video').play(), false);
+    </script>
+    <script type="application/javascript">
+      if (!('scrollBehavior' in document.querySelector('html').style)) {
+        document.getElementById('down').addEventListener('click', e => {
+          e.preventDefault();
+          document.getElementById('main').scrollIntoView({
+            behavior: "smooth", block: "end", inline: "nearest"
+          });
+        })
+      }
     </script>
   </body>
 </html>
