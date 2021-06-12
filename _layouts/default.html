@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -25,7 +25,34 @@
       </div>
     </article>
 
-    <!-- {{ content }} -->
+    <main id="main">
+      <div class="container content">
+        {{ content }}
+      </div>
+    </main>
+
+    <article>
+      <div class="container content">
+        <h3>Enough logos for bugs!</h3>
+        <p>So you are just another security researcher trying to hype?</p>
+        <p>More than that. I've even got a commercial!</p>
+      </div>
+    </article>
+
+    <section class="commercial">
+      <div class="container">
+        {% include player.html %}
+      </div>
+    </section>
+
+    <article>
+      <div class="container content">
+        <h3>Disclosure eta wen</h3>
+        <p></p>
+      </div>
+    </article>
+    
+    {% include footer.html %}
 
     <script type="application/javascript">
       // shitty WeChat
