@@ -59,7 +59,7 @@ Mistune could directly escape browser sandbox before native code execution (CVE-
 
 A second memory safety issue (CVE-2021-1864) was used to gain full shellcode execution. Interestingly, it was not possible to trigger this without the first sandbox bug, while you can always influently replace this part with any working WebKit exploit.
 
-iOS remained standing at various pwn competitions after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 is the very first successful event that has this category pwned.
+iOS remained standing at various pwn contests after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 is the very first successful event that has this category pwned.
 
 ## Is it related to hardware?
 
@@ -89,7 +89,7 @@ Hardened Just-in-Time compiler leverages special system registers to implement `
 
 As the exploit was not really targetting WebKit itself, protections like Gigacage, PACCage, StructureID Randomization are not the main concerns.
 
-Instead, it totally relied on Objective-C runtime to build all the primitives. Objective-C had introduced several little-known protections before it, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the competition.
+Instead, it totally relied on Objective-C runtime to build all the primitives. Objective-C had introduced several little-known protections before it, including runtime obfuscation and randomization. The exploit has bypassed some of them at the time of the contest.
 
 Glad to see some new improvements by 14.5 effectively stops many of them after the report.
 
