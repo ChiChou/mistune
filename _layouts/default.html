@@ -71,10 +71,10 @@
         document.querySelector('video').play(), false);
     </script>
     <script type="application/javascript">
-      setTimeout(() =>
-        document.querySelectorAll('link[data-lazy]').forEach(
-          e => e.setAttribute('media', 'screen')),
-      200);
+      document.addEventListener('DOMContentLoaded', 
+        () => document.querySelectorAll('link[data-lazy]').forEach(
+          e => e.setAttribute('media', 'screen')
+        ), { once: true });
     </script>
   </body>
 </html>
