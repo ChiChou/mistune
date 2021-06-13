@@ -97,4 +97,4 @@ Glad to see some new improvements by 14.5 effectively stops many of them after t
 
 I would like to thank the organizer of TianfuCup for hosting the event and helping with the disclosure. Also thank Apple product security team for reviewing the issues, shipping the patches within reasonable time and the recognition.
 
-The dynamic logo was created with [PhotoMesh](https://photomosh.com/). Impressive tool!
+The dynamic logo was created with [PhotoMosh](https://photomosh.com/). Impressive tool!
