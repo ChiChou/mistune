@@ -69,20 +69,5 @@
       document.addEventListener('WeixinJSBridgeReady', () =>
         document.querySelector('video').play(), false);
     </script>
-    <script type="application/javascript">
-      if (!('scrollBehavior' in document.querySelector('html').style)) {
-        document.querySelectorAll('.first nav > a').forEach(link => {
-          link.addEventListener('click', e => {
-            if (e.srcElement.nodeName.toLowerCase() !== 'a') return
-
-            e.preventDefault();
-            console.log(e.target, e.srcElement)
-            document.getElementById(e.srcElement.href.substring(1)).scrollIntoView({
-              behavior: "smooth", block: "end", inline: "nearest"
-            });
-          });
-        })
-      }
-    </script>
   </body>
 </html>
