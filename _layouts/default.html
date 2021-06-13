@@ -15,8 +15,10 @@
       <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     </noscript>
 
-    <link rel="stylesheet" data-lazy media="print" href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Ubuntu:wght@300;400&display=swap">
-    <link rel="stylesheet" data-lazy media="print" href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
+    <link rel="stylesheet" data-lazy media="print" 
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Ubuntu:wght@300;400&display=swap">
+    <link rel="stylesheet" data-lazy media="print"
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap">
 
     {% seo %}
   </head>
@@ -71,10 +73,10 @@
         document.querySelector('video').play(), false);
     </script>
     <script type="application/javascript">
-      document.addEventListener('DOMContentLoaded', 
-        () => document.querySelectorAll('link[data-lazy]').forEach(
+      document.addEventListener('DOMContentLoaded',
+        () => setTimeout(() => document.querySelectorAll('link[data-lazy]').forEach(
           e => e.setAttribute('media', 'screen')
-        ), { once: true });
+        ), 50), { once: true });
     </script>
   </body>
 </html>
