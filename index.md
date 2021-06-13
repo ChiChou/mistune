@@ -59,11 +59,11 @@ Mistune could directly escape browser sandbox before native code execution (CVE-
 
 A second memory safety issue (CVE-2021-1864) was used to gain full shellcode execution. Interestingly, it was not possible to trigger this without the first sandbox bug, while you can always influently replace this part with any working WebKit exploit.
 
-iOS remained standing at various pwn competitions after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 was the very first successful event that has this category pwned.
+iOS remained standing at various pwn competitions after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 is the very first successful event that has this category pwned.
 
 ## Is it related to hardware?
 
-No, but the hardware matters when it comes to exploitation. Some hardware level mitigations raised the bar greatly.
+No, but hardware matters when it comes to exploitation. Some hardware level mitigations significantly raised the bar.
 
 ## What exact mitigations have been bypassed?
 
