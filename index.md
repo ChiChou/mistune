@@ -53,13 +53,13 @@ I've verified several popular 3rd-party instant messengers to successfully trigg
 
 ## Everyone is born unique. What makes it special?
 
-Usually an exploit starts from WebKit, loads shellcode and try to exploit other bugs to escalate the privilege. Both of the bugs of Mistune were triggered and exploited in Javascript, but they were targeting a preinstalled app, iTunes Store, instead of MobileSafari.
+Usually an exploit starts from WebKit, loads shellcode and try to exploit other bugs to escalate the privilege. Both of the bugs of Mistune were triggered and exploited in Javascript, but they were targeting a pre-installed app, iTunes Store, instead of MobileSafari.
 
 Mistune could directly escape browser sandbox before native code execution (CVE-2021-1748). In fact, it's capable of reading sensitive information and launching arbitrary app (including our beloved Calculator) with zero memory corruption, making it invincible to modern memory safety and control-flow integrity mitigations.
 
 A second memory safety issue (CVE-2021-1864) was used to gain full shellcode execution. Interestingly, it was not possible to trigger this without the first sandbox bug, while you can always influently replace this part with any working WebKit exploit.
 
-iOS remained standing at various pwn contests after Pointer Authentication Code (PAC) was shipped by A12 chips. TianfuCup 2020 is the very first successful event that has this category pwned.
+iOS remained standing at various pwn contests after Pointer Authentication Code (PAC) was shipped by A12 chip. TianfuCup 2020 is the very first successful event that has this category pwned.
 
 ## Is it related to hardware?
 
@@ -67,7 +67,7 @@ No, but hardware matters when it comes to exploitation. Some hardware level miti
 
 ## What exact mitigations have been bypassed?
 
-The exploit was really tough for me. It's a state-of-the-art phone that have various protections. I was just being lucky that some mitigation was already in progress but not shipped at the time, which can totally broke the exploit.
+The exploit was really tough for me. It's a state-of-the-art phone that has various protections. I was just being lucky that some mitigation was already in progress but not shipped at the time, which could've totally broken the exploit.
 
 ### Pointer Authentication Code (PAC)
 
