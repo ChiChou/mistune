@@ -75,7 +75,7 @@ This is the most remarkable protection for the challenge. With hardware-assisted
 
 ### Sandbox
 
-MobileSafari has JavaScript running in a very restrictive, containerized process. The exploit uses a client-site XSS to easily switch to a loosy context with extra attack surfaces, while Just-in-Time still remains avaliable.
+MobileSafari has JavaScript running in a very restrictive, containerized process. The exploit uses a client-site XSS to easily switch to a loose context with extra attack surfaces, while Just-in-Time still remains avaliable.
 
 ### Transparency Consent and Control (TCC)
 
