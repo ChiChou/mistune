@@ -27,7 +27,7 @@ After direct disclosure to the vendor, [CVE-2021-1748](https://support.apple.com
 >
 > Available for: iPhone 6s and later, iPad Pro (all models), iPad Air 2 and later, iPad 5th generation and later, iPad mini 4 and later, and iPod touch (7th generation)
 >
-> Impact: Processing a maliciously crafted URL may lead to arbitrary javascript code execution
+> Impact: Processing a maliciously crafted URL may lead to arbitrary JavaScript code execution
 >
 > Description: A validation issue was addressed with improved input sanitization.
 >
@@ -53,7 +53,7 @@ I've verified several popular 3rd-party instant messengers to successfully trigg
 
 ## Everyone is born unique. What makes it special?
 
-Usually an exploit starts from WebKit, loads shellcode and try to exploit other bugs to escalate the privilege. Both of the bugs of Mistune were triggered and exploited in Javascript, but they were targeting a pre-installed app, iTunes Store, instead of MobileSafari.
+Usually an exploit starts from WebKit, loads shellcode and try to exploit other bugs to escalate the privilege. Both of the bugs of Mistune were triggered and exploited in JavaScript, but they were targeting a pre-installed app, iTunes Store, instead of MobileSafari.
 
 Mistune could directly escape browser sandbox before native code execution (CVE-2021-1748). In fact, it's capable of reading sensitive information and launching arbitrary app (including our beloved Calculator) with zero memory corruption, making it invincible to modern memory safety and control-flow integrity mitigations.
 
@@ -75,7 +75,7 @@ This is the most remarkable protection for the challenge. With hardware-assisted
 
 ### Sandbox
 
-MobileSafari has Javascript running in a very restrictive, containerized process. The exploit uses a client-site XSS to easily switch to a loosy context with extra attack surfaces, while Just-in-Time still remains avaliable.
+MobileSafari has JavaScript running in a very restrictive, containerized process. The exploit uses a client-site XSS to easily switch to a loosy context with extra attack surfaces, while Just-in-Time still remains avaliable.
 
 ### Transparency Consent and Control (TCC)
 
