@@ -107,6 +107,7 @@ article, main {
   nav > a {
     font-size: 1rem;
     text-decoration: none;
+
     > span {
       font-size: 1.25rem;
       margin-right: .125rem;
@@ -144,9 +145,12 @@ article, main {
     display: inline-block;
     margin: 2rem;
 
-    transition: 0.2s color ease-in-out;
+    opacity: .5;
+    transition: .2s opacity ease-in, .2s transform ease-in-out;
 
     &:hover {
+      opacity: 1;
+      transform: scale(1.125);
       color: #fff;
     }
   }
